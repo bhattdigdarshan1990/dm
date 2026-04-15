@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Award, BookOpen, Target, Users } from 'lucide-react';
-import drAmeta from '../assets/doctor.png';
+import { getAssetPath } from '../lib/assets';
 
 export default function About() {
   const fadeIn = {
@@ -30,7 +30,7 @@ export default function About() {
             <div className="grid md:grid-cols-12 gap-0">
               <div className="md:col-span-5 relative h-[400px] md:h-auto">
                 <img 
-                  src={drAmeta} 
+                  src={getAssetPath('doctor.png')} 
                   alt="Dr. Mayank Ameta" 
                   className="absolute inset-0 w-full h-full object-contain object-top bg-white"
                 />
