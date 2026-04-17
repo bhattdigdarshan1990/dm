@@ -1,0 +1,16 @@
+# Treat all images as binary files to prevent corruption during line-ending normalization
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+
+# Ensure other assets are handled correctly
+*.svg text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.html text eol=lf
+*.json text eol=lf
