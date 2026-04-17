@@ -1,4 +1,5 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
+// Website Version 1.1 - Performance Optimized & Image Protection Enabled
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
