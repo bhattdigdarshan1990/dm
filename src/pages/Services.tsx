@@ -9,14 +9,14 @@ export default function Services() {
       icon: Search,
       title: 'Upper GI Endoscopy',
       description: 'A procedure to visually examine your upper digestive system with a tiny camera on the end of a long, flexible tube. Used to diagnose and treat conditions of the esophagus, stomach, and duodenum.',
-      color: 'bg-blue-50 text-blue-600 border-blue-100'
+      color: 'bg-sky-50 text-sky-600 border-sky-100'
     },
     {
       id: 'liver',
       icon: Droplets,
       title: 'Liver Disease Treatment',
       description: 'Comprehensive care for liver conditions including Hepatitis B & C, Fatty Liver Disease, Cirrhosis, and Liver Failure. We offer advanced diagnostics and personalized management plans.',
-      color: 'bg-emerald-50 text-emerald-600 border-emerald-100'
+      color: 'bg-sky-50 text-sky-600 border-sky-100'
     },
     {
       id: 'gerd',
@@ -42,20 +42,20 @@ export default function Services() {
   ];
 
   return (
-    <div className="bg-slate-50 dark:bg-slate-950 min-h-screen pb-20">
+    <div className="bg-white dark:bg-[#070b14] min-h-screen pb-20">
       {/* Page Header */}
-      <div className="bg-teal-700 text-white py-16 md:py-24 relative overflow-hidden">
+      <div className="bg-sky-600 text-white py-16 md:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
         <div className="max-w-screen-2xl mx-auto px-4 relative z-10 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h1>
-          <p className="text-teal-100 text-lg max-w-2xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">Our Services</h1>
+          <p className="text-sky-100 text-lg max-w-2xl mx-auto font-medium">
             Comprehensive diagnostic and therapeutic solutions for all your digestive health needs.
           </p>
         </div>
       </div>
 
       {/* Services Grid */}
-      <div className="max-w-screen-2xl mx-auto px-4 -mt-10 relative z-20">
+      <div className="max-w-screen-2xl mx-auto px-4 -mt-12 relative z-20">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, idx) => (
             <motion.div
@@ -64,22 +64,22 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-slate-800 hover:shadow-xl transition-shadow flex flex-col h-full"
+              className="bg-white dark:bg-[#0d1525] rounded-3xl p-10 shadow-2xl border border-sky-100 dark:border-sky-900/30 hover:shadow-sky-200/20 dark:hover:shadow-none hover:-translate-y-2 transition-all flex flex-col h-full"
             >
-              <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border ${service.color.replace('border-', 'dark:border-').replace('bg-', 'dark:bg-opacity-20 dark:bg-')}`}>
+              <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 border transition-colors ${service.color.replace('border-', 'dark:border-').replace('bg-', 'dark:bg-opacity-20 dark:bg-')}`}>
                 <service.icon size={32} />
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">{service.title}</h3>
-              <p className="text-slate-600 dark:text-slate-300 leading-relaxed flex-grow mb-6">
+              <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4 tracking-tight">{service.title}</h3>
+              <p className="text-slate-600 dark:text-slate-300 leading-relaxed flex-grow mb-8 text-sm">
                 {service.description}
               </p>
               <a 
                 href="https://wa.me/919414158480" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-teal-600 dark:text-teal-400 font-semibold hover:text-teal-800 dark:hover:text-teal-300 inline-flex items-center mt-auto"
+                className="text-sky-600 dark:text-sky-400 font-extrabold hover:text-sky-800 dark:hover:text-sky-300 inline-flex items-center mt-auto text-sm"
               >
-                Inquire about this <span className="ml-2">→</span>
+                Inquire now <span className="ml-2">→</span>
               </a>
             </motion.div>
           ))}
@@ -87,10 +87,10 @@ export default function Services() {
       </div>
 
       {/* FAQ Section */}
-      <section className="max-w-4xl mx-auto px-4 mt-24">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <p className="text-slate-600 dark:text-slate-400">Common queries about our procedures and treatments.</p>
+      <section className="max-w-4xl mx-auto px-4 mt-32">
+        <div className="text-center mb-16">
+          <h2 className="text-sky-600 dark:text-sky-400 font-black tracking-widest uppercase text-xs mb-4">Questions & Answers</h2>
+          <h3 className="text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">Frequently Asked Questions</h3>
         </div>
 
         <div className="space-y-6">
@@ -117,10 +117,10 @@ export default function Services() {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-800"
+              className="bg-sky-50/50 dark:bg-[#0d1525] p-8 rounded-3xl shadow-sm border border-sky-100 dark:border-sky-900/30"
             >
-              <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{faq.q}</h4>
-              <p className="text-slate-600 dark:text-slate-400">{faq.a}</p>
+              <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight">{faq.q}</h4>
+              <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">{faq.a}</p>
             </motion.div>
           ))}
         </div>

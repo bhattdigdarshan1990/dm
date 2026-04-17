@@ -45,17 +45,17 @@ export default function Layout() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col font-sans transition-all duration-700 ease-in-out bg-slate-50 text-gray-800 dark:bg-slate-950 dark:text-slate-200">
+    <div className="min-h-screen flex flex-col font-sans transition-all duration-700 ease-in-out bg-white text-gray-800 dark:bg-[#070b14] dark:text-blue-50">
       <div className="fixed w-full z-50 top-0 left-0 flex flex-col transition-all duration-300">
         {/* Top Bar */}
-        <div className={`py-2 px-4 hidden md:block transition-colors duration-700 ${isScrolled ? 'bg-teal-800 text-white' : (isHome ? 'bg-teal-900/30 backdrop-blur-sm text-white' : 'bg-teal-700 text-white')}`}>
+        <div className={`py-2 px-4 hidden md:block transition-colors duration-700 ${isScrolled ? 'bg-sky-700 text-white' : (isHome ? 'bg-sky-900/30 backdrop-blur-sm text-white' : 'bg-sky-600 text-white')}`}>
           <div className="max-w-screen-2xl mx-auto flex justify-between items-center text-sm">
             <div className="flex items-center space-x-6">
               <span className="flex items-center"><Phone size={16} className="mr-2" /> +91 94141 58480</span>
               <span className="flex items-center"><Mail size={16} className="mr-2" /> info@drmayankameta.com</span>
             </div>
             <div className="flex items-center space-x-4">
-              <a href="https://maps.app.goo.gl/RUgGqAZXVKrNsQJy7" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-teal-200 transition-colors">
+              <a href="https://maps.app.goo.gl/RUgGqAZXVKrNsQJy7" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-sky-200 transition-colors">
                 <MapPin size={16} className="mr-2" /> Udaipur, Rajasthan
               </a>
             </div>
@@ -65,22 +65,22 @@ export default function Layout() {
         {/* Navbar */}
         <header
           className={`transition-all duration-700 ${
-            isScrolled ? 'bg-white shadow-md py-3 dark:bg-slate-900' : (isHome ? 'bg-white/70 backdrop-blur-md py-5 dark:bg-slate-900/70' : 'bg-white shadow-sm py-5 dark:bg-slate-900')
+            isScrolled ? 'bg-white shadow-md py-3 dark:bg-[#0d1525]' : (isHome ? 'bg-white/70 backdrop-blur-md py-5 dark:bg-[#0d1525]/70' : 'bg-white shadow-sm py-5 dark:bg-[#0d1525]')
           }`}
         >
         <div className="max-w-screen-2xl mx-auto px-4 flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="relative flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500 to-teal-700 shadow-lg shadow-teal-500/30 group-hover:shadow-teal-500/50 transition-all duration-300 transform group-hover:-translate-y-0.5">
+            <div className="relative flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-sky-400 to-sky-600 shadow-lg shadow-sky-500/30 group-hover:shadow-sky-500/50 transition-all duration-300 transform group-hover:-translate-y-0.5">
               <Activity className="text-white w-6 h-6" />
               <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center transition-colors duration-700">
-                <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
+                <div className="w-2 h-2 bg-sky-500 rounded-full"></div>
               </div>
             </div>
             <div className="flex flex-col">
               <h1 className="text-2xl font-extrabold tracking-tight text-slate-800 dark:text-white leading-none mb-1 transition-colors duration-700">
-                Dr. Mayank <span className="text-teal-600">Ameta</span>
+                Dr. Mayank <span className="text-sky-600">Ameta</span>
               </h1>
-              <p className="text-[10px] font-bold tracking-widest text-slate-500 dark:text-slate-400 uppercase transition-colors duration-700">
+              <p className="text-[10px] font-bold tracking-widest text-slate-500 dark:text-sky-400 uppercase transition-colors duration-700">
                 Gastroenterologist
               </p>
             </div>
@@ -92,8 +92,8 @@ export default function Layout() {
               <Link
                 key={link.name}
                 to={link.path}
-                className={`font-medium transition-all duration-700 hover:text-teal-600 ${
-                  location.pathname === link.path ? 'text-teal-600 border-b-2 border-teal-600' : 'text-gray-600 dark:text-slate-300'
+                className={`font-medium transition-all duration-700 hover:text-sky-600 ${
+                  location.pathname === link.path ? 'text-sky-600 border-b-2 border-sky-600' : 'text-gray-600 dark:text-blue-100'
                 }`}
               >
                 {link.name}
@@ -103,18 +103,18 @@ export default function Layout() {
             {/* Premium Theme Toggle Switch */}
             <button
               onClick={toggleTheme}
-              className="relative w-14 h-7 rounded-full bg-slate-200 dark:bg-teal-900/50 transition-colors duration-700 focus:outline-none focus:ring-2 focus:ring-teal-500 overflow-hidden"
+              className="relative w-14 h-7 rounded-full bg-slate-200 dark:bg-sky-900/50 transition-colors duration-700 focus:outline-none focus:ring-2 focus:ring-sky-500 overflow-hidden"
               aria-label="Toggle Theme"
             >
               <motion.div
-                className="absolute top-1 left-1 w-5 h-5 rounded-full bg-white dark:bg-teal-400 shadow-sm flex items-center justify-center z-10"
+                className="absolute top-1 left-1 w-5 h-5 rounded-full bg-white dark:bg-sky-400 shadow-sm flex items-center justify-center z-10"
                 animate={{ x: theme === 'dark' ? 28 : 0 }}
                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
               >
                 {theme === 'light' ? (
                   <Sun size={12} className="text-amber-500" />
                 ) : (
-                  <Moon size={12} className="text-teal-900" />
+                  <Moon size={12} className="text-sky-900" />
                 )}
               </motion.div>
               <div className="flex justify-between items-center h-full px-2 opacity-40">
@@ -132,7 +132,7 @@ export default function Layout() {
               aria-label="Toggle Theme"
             >
               <motion.div
-                className="absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white dark:bg-teal-500 shadow-sm flex items-center justify-center"
+                className="absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white dark:bg-sky-500 shadow-sm flex items-center justify-center"
                 animate={{ x: theme === 'dark' ? 24 : 0 }}
                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
               >
@@ -140,7 +140,7 @@ export default function Layout() {
               </motion.div>
             </button>
             <button
-              className="text-gray-600 dark:text-slate-300 hover:text-teal-600 transition-colors duration-700"
+              className="text-gray-600 dark:text-blue-100 hover:text-sky-600 transition-colors duration-700"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -155,7 +155,7 @@ export default function Layout() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-white dark:bg-slate-900 border-t dark:border-slate-800 mt-3 overflow-hidden"
+              className="md:hidden bg-white dark:bg-[#0d1525] border-t dark:border-blue-900/30 mt-3 overflow-hidden"
             >
               <div className="flex flex-col px-4 py-4 space-y-4">
                 {navLinks.map((link) => (
@@ -163,7 +163,7 @@ export default function Layout() {
                     key={link.name}
                     to={link.path}
                     className={`font-medium px-2 py-1 ${
-                      location.pathname === link.path ? 'text-teal-600' : 'text-gray-600 dark:text-slate-300'
+                      location.pathname === link.path ? 'text-sky-600' : 'text-gray-600 dark:text-blue-100'
                     }`}
                   >
                     {link.name}
@@ -188,16 +188,16 @@ export default function Layout() {
       </motion.main>
 
       {/* Footer */}
-      <footer className="bg-slate-900 text-slate-300 pt-16 pb-8">
+      <footer className="bg-[#070b14] text-blue-200/80 pt-16 pb-8 border-t border-blue-900/30">
         <div className="max-w-screen-2xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-teal-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+              <div className="w-10 h-10 bg-sky-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
                 MA
               </div>
               <div>
                 <h2 className="text-xl font-bold text-white leading-tight">Dr. Mayank Ameta</h2>
-                <p className="text-xs text-teal-400 font-medium">Gastroenterologist</p>
+                <p className="text-xs text-sky-400 font-medium tracking-wide">Gastroenterologist</p>
               </div>
             </div>
             <p className="text-sm leading-relaxed mb-6">
@@ -210,7 +210,7 @@ export default function Layout() {
             <ul className="space-y-3">
               {navLinks.map((link) => (
                 <li key={link.name}>
-                  <Link to={link.path} className="hover:text-teal-400 transition-colors flex items-center">
+                  <Link to={link.path} className="hover:text-sky-400 transition-colors flex items-center">
                     <span className="mr-2">›</span> {link.name}
                   </Link>
                 </li>
@@ -221,11 +221,11 @@ export default function Layout() {
           <div>
             <h3 className="text-lg font-semibold text-white mb-6">Our Services</h3>
             <ul className="space-y-3">
-              <li><Link to="/services" className="hover:text-teal-400 transition-colors flex items-center"><span className="mr-2">›</span> Endoscopy</Link></li>
-              <li><Link to="/services" className="hover:text-teal-400 transition-colors flex items-center"><span className="mr-2">›</span> Colonoscopy</Link></li>
-              <li><Link to="/services" className="hover:text-teal-400 transition-colors flex items-center"><span className="mr-2">›</span> Liver Disease Treatment</Link></li>
-              <li><Link to="/services" className="hover:text-teal-400 transition-colors flex items-center"><span className="mr-2">›</span> Acid Reflux / GERD</Link></li>
-              <li><Link to="/services" className="hover:text-teal-400 transition-colors flex items-center"><span className="mr-2">›</span> IBS Treatment</Link></li>
+              <li><Link to="/services" className="hover:text-sky-400 transition-colors flex items-center"><span className="mr-2">›</span> Endoscopy</Link></li>
+              <li><Link to="/services" className="hover:text-sky-400 transition-colors flex items-center"><span className="mr-2">›</span> Colonoscopy</Link></li>
+              <li><Link to="/services" className="hover:text-sky-400 transition-colors flex items-center"><span className="mr-2">›</span> Liver Disease Treatment</Link></li>
+              <li><Link to="/services" className="hover:text-sky-400 transition-colors flex items-center"><span className="mr-2">›</span> Acid Reflux / GERD</Link></li>
+              <li><Link to="/services" className="hover:text-sky-400 transition-colors flex items-center"><span className="mr-2">›</span> IBS Treatment</Link></li>
             </ul>
           </div>
 
@@ -233,24 +233,24 @@ export default function Layout() {
             <h3 className="text-lg font-semibold text-white mb-6">Contact Info</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <MapPin className="mr-3 text-teal-500 shrink-0 mt-1" size={20} />
-                <a href="https://maps.app.goo.gl/RUgGqAZXVKrNsQJy7" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400 transition-colors">
+                <MapPin className="mr-3 text-sky-500 shrink-0 mt-1" size={20} />
+                <a href="https://maps.app.goo.gl/RUgGqAZXVKrNsQJy7" target="_blank" rel="noopener noreferrer" className="hover:text-sky-400 transition-colors">
                   Opposite SBI Bank, Madhuban, Udaipur, Rajasthan
                 </a>
               </li>
               <li className="flex items-center">
-                <Phone className="mr-3 text-teal-500 shrink-0" size={20} />
+                <Phone className="mr-3 text-sky-500 shrink-0" size={20} />
                 <span>+91 94141 58480</span>
               </li>
               <li className="flex items-center">
-                <Mail className="mr-3 text-teal-500 shrink-0" size={20} />
+                <Mail className="mr-3 text-sky-500 shrink-0" size={20} />
                 <span>info@drmayankameta.com</span>
               </li>
             </ul>
           </div>
         </div>
         
-        <div className="max-w-screen-2xl mx-auto px-4 mt-12 pt-8 border-t border-slate-800 text-sm text-center flex flex-col md:flex-row justify-between items-center">
+        <div className="max-w-screen-2xl mx-auto px-4 mt-12 pt-8 border-t border-blue-900/30 text-sm text-center flex flex-col md:flex-row justify-between items-center">
           <p>&copy; {new Date().getFullYear()} Dr. Mayank Ameta. All rights reserved.</p>
           <div className="mt-4 md:mt-0 space-x-4">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

@@ -39,21 +39,21 @@ export default function Gallery() {
   ];
 
   return (
-    <div className="bg-slate-50 dark:bg-slate-950 min-h-screen pb-20">
+    <div className="bg-white dark:bg-[#070b14] min-h-screen pb-20">
       {/* Page Header */}
-      <div className="bg-teal-700 text-white py-16 md:py-24 relative overflow-hidden">
+      <div className="bg-sky-600 text-white py-16 md:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
         <div className="max-w-screen-2xl mx-auto px-4 relative z-10 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Gallery</h1>
-          <p className="text-teal-100 text-lg max-w-2xl mx-auto">
-            A glimpse into our consultation clinic and associated hospital facilities.
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">Gallery</h1>
+          <p className="text-sky-100 text-lg max-w-2xl mx-auto font-medium">
+            Explore our professional medical environment and facilities.
           </p>
         </div>
       </div>
 
       {/* Gallery Grid */}
-      <div className="max-w-screen-2xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="max-w-screen-2xl mx-auto px-4 py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {images.map((img, idx) => (
             <motion.div
               key={idx}
@@ -61,18 +61,18 @@ export default function Gallery() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="relative group cursor-pointer rounded-2xl overflow-hidden shadow-md aspect-video bg-gray-200 dark:bg-slate-800"
+              className="relative group cursor-pointer rounded-3xl overflow-hidden shadow-2xl aspect-video bg-sky-50 dark:bg-[#0d1525] border border-sky-100 dark:border-sky-900/30"
               onClick={() => setSelectedImg(img.src)}
             >
               <img 
                 src={img.src} 
                 alt={img.alt} 
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                <span className="text-teal-300 text-sm font-medium mb-1">{img.category}</span>
-                <h3 className="text-white font-semibold text-lg">{img.alt}</h3>
+              <div className="absolute inset-0 bg-gradient-to-t from-sky-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                <span className="text-sky-300 text-xs font-black uppercase tracking-widest mb-2">{img.category}</span>
+                <h3 className="text-white font-black text-xl tracking-tight">{img.alt}</h3>
               </div>
             </motion.div>
           ))}
@@ -86,11 +86,11 @@ export default function Gallery() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
+            className="fixed inset-0 z-[100] bg-slate-950/95 backdrop-blur-md flex items-center justify-center p-4"
             onClick={() => setSelectedImg(null)}
           >
             <button 
-              className="absolute top-6 right-6 text-white/70 hover:text-white bg-black/50 rounded-full p-2 transition-colors"
+              className="absolute top-8 right-8 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full p-3 transition-all z-[110]"
               onClick={() => setSelectedImg(null)}
             >
               <X size={32} />
@@ -101,7 +101,7 @@ export default function Gallery() {
               exit={{ scale: 0.9, opacity: 0 }}
               src={selectedImg}
               alt="Enlarged view"
-              className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+              className="max-w-full max-h-[90vh] object-contain rounded-2xl shadow-2xl border border-white/10"
               onClick={(e) => e.stopPropagation()}
               referrerPolicy="no-referrer"
             />
