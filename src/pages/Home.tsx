@@ -65,6 +65,10 @@ export default function Home() {
               <img 
                 src={drAmeta} 
                 alt="Dr. Mayank Ameta" 
+                width="400"
+                height="500"
+                loading="eager"
+                fetchPriority="high"
                 className="relative z-10 rounded-2xl shadow-2xl object-cover w-full max-w-md mx-auto aspect-[4/5] object-top border-4 border-white dark:border-blue-900/50 bg-white dark:bg-slate-800"
               />
               
@@ -121,8 +125,12 @@ export default function Home() {
             <motion.div {...fadeIn} className="relative">
               <div className="absolute inset-0 bg-sky-500/20 blur-3xl transform rotate-6 scale-90"></div>
               <img 
-                src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1000&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop&fm=webp" 
                 alt="Clinic Setup" 
+                width="800"
+                height="600"
+                loading="lazy"
+                decoding="async"
                 className="rounded-3xl shadow-2xl w-full relative z-10 border-8 border-slate-800 dark:border-sky-900/30"
                 referrerPolicy="no-referrer"
               />
@@ -190,7 +198,7 @@ export default function Home() {
               >
                 <div className="w-20 h-20 bg-white dark:bg-[#1e293b] rounded-2xl flex items-center justify-center text-4xl mb-8 shadow-xl shadow-sky-200/20 dark:shadow-none group-hover:rotate-6 transition-transform overflow-hidden border border-sky-50 dark:border-sky-800">
                   {service.image ? (
-                    <img src={service.image} alt={service.title} className="w-12 h-12 object-contain" />
+                    <img src={service.image} alt={service.title} loading="lazy" className="w-12 h-12 object-contain" />
                   ) : (
                     service.icon
                   )}
