@@ -176,7 +176,7 @@ export default function Layout() {
             <ul className="space-y-3">
               {navLinks.map((link) => (
                 <li key={link.name}>
-                  <Link to={link.path} className="hover:text-sky-400 transition-colors flex items-center">
+                  <Link to={link.path} className="hover:text-sky-400 hover:scale-105 hover:translate-x-2 transition-all duration-300 flex items-center origin-left">
                     <span className="mr-2">›</span> {link.name}
                   </Link>
                 </li>
@@ -187,30 +187,38 @@ export default function Layout() {
           <div>
             <h3 className="text-lg font-semibold text-white mb-6">Our Services</h3>
             <ul className="space-y-3">
-              <li><Link to="/services" className="hover:text-sky-400 transition-colors flex items-center"><span className="mr-2">›</span> Endoscopy</Link></li>
-              <li><Link to="/services" className="hover:text-sky-400 transition-colors flex items-center"><span className="mr-2">›</span> Colonoscopy</Link></li>
-              <li><Link to="/services" className="hover:text-sky-400 transition-colors flex items-center"><span className="mr-2">›</span> Liver Disease Treatment</Link></li>
-              <li><Link to="/services" className="hover:text-sky-400 transition-colors flex items-center"><span className="mr-2">›</span> Acid Reflux / GERD</Link></li>
-              <li><Link to="/services" className="hover:text-sky-400 transition-colors flex items-center"><span className="mr-2">›</span> IBS Treatment</Link></li>
+              {[
+                { name: 'Endoscopy', path: '/services' },
+                { name: 'Colonoscopy', path: '/services' },
+                { name: 'Liver Disease Treatment', path: '/services' },
+                { name: 'Acid Reflux / GERD', path: '/services' },
+                { name: 'IBS Treatment', path: '/services' }
+              ].map((service) => (
+                <li key={service.name}>
+                  <Link to={service.path} className="hover:text-sky-400 hover:scale-105 hover:translate-x-2 transition-all duration-300 flex items-center origin-left">
+                    <span className="mr-2">›</span> {service.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
             <h3 className="text-lg font-semibold text-white mb-6">Contact Info</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <MapPin className="mr-3 text-sky-500 shrink-0 mt-1" size={20} />
+            <ul className="space-y-4 text-sm font-medium">
+              <li className="flex items-start group hover:scale-105 hover:translate-x-2 transition-all duration-300 origin-left">
+                <MapPin className="mr-3 text-sky-500 shrink-0 mt-1 cursor-default" size={20} />
                 <a href="https://maps.app.goo.gl/RUgGqAZXVKrNsQJy7" target="_blank" rel="noopener noreferrer" className="hover:text-sky-400 transition-colors">
                   Opposite SBI Bank, Madhuban, Udaipur, Rajasthan
                 </a>
               </li>
-              <li className="flex items-center">
-                <Phone className="mr-3 text-sky-500 shrink-0" size={20} />
-                <span>+91 94141 58480</span>
+              <li className="flex items-center group hover:scale-105 hover:translate-x-2 transition-all duration-300 origin-left">
+                <Phone className="mr-3 text-sky-500 shrink-0 cursor-default" size={20} />
+                <span className="hover:text-sky-400 cursor-default transition-colors">+91 94141 58480</span>
               </li>
-              <li className="flex items-center">
-                <Mail className="mr-3 text-sky-500 shrink-0" size={20} />
-                <span>info@drmayankameta.com</span>
+              <li className="flex items-center group hover:scale-105 hover:translate-x-2 transition-all duration-300 origin-left">
+                <Mail className="mr-3 text-sky-500 shrink-0 cursor-default" size={20} />
+                <span className="hover:text-sky-400 cursor-default transition-colors">info@drmayankameta.com</span>
               </li>
             </ul>
           </div>
